@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header h1{
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+        #one{
+            
+            color: aliceblue;
+            font-weight: 900;
+           font-size: 30px;
+           text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+        .one{
+            background-color: black;
+        margin-left: 400px;
+        margin-right: 300px;
+        border-radius: 18px;
+        }
+        h1{
+            text-align: center;
+        }
+        body{
+            background-image: linear-gradient(60deg,blue,green,yellow);
+        }
+      header  h1{
+         color: rgb(255, 255, 255);
+         font-size: 35px;
+         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+         font-weight: 900;
+         text-decoration: underline solid rgb(31, 32, 29);
+        }
+        header button{
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 16px;
+            background-image: linear-gradient(40deg,yellow,green);
+            font-weight: 900;
+            cursor: pointer;
+        }
+        header{
+            text-align: center;
+        }
+        header button:hover{
+            background-image: linear-gradient(40deg,rgb(15, 15, 12),rgb(0, 255, 0)); 
+            color: aliceblue;
+            transition: 0.5s;
+        }
+    </style>
+    <script>
+        function plaindrome(n) {
+           let temp=n;
+           let rev=0;
+           while (n>0) {
+            let d=n%10;
+            rev=rev*10+d;
+            n=Math.trunc(n/10);
+
+           } 
+           if (rev==temp) {
+            return true;
+           }
+           else{
+            return false;
+           }
+        }
+       function printplaindrome() {
+        let n=Number(prompt("Enter the number to check plaindrome or not!=>"));
+        if (plaindrome(n)) {
+            alert("Congrats!! The Number Is a Plaindrome Number");
+        }
+        else{
+            alert("Sorry!! The Number Is Not a Plaindrome Number");
+ 
+        }
+       } 
+       function rangeplaindrome() {
+        let ll=Number(prompt("Enter thr Lower Limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        for(let i=ll;i<=ul;i++)
+       {
+        if (plaindrome(i)) {
+            alert("The Plaindrome Numbers Are=>"+i);
+        }
+       }
+       }
+       function alternateplaindrome() {
+        let ll=Number(prompt("Enter thr Lower Limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        let c=0;
+        for(let i=ll;i<=ul;i++)
+       {
+          
+        if(plaindrome(i)){
+        c++;
+
+          if (c%2!=0) {
+            alert("The Alternate pliandrome numbers are=>"+i);
+          }
+        }
+       }
+       }
+function firstthreeplaindrome() {
+    let ll=Number(prompt("Enter thr Lower Limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        let c=0;
+        for(let i=ll;i<=ul;i++)
+       {
+          
+        if(plaindrome(i)){
+        c++;
+        alert("The First Three pliandrome numbers are=>"+i);
+          if (c==3) {
+           break;
+          }
+        }
+       }
+}
+function lastthreeplaindrome() {
+    let ll=Number(prompt("Enter thr Lower Limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        let c=0;
+        for(let i=ul;i>=ll;i--)
+       {
+          
+        if(plaindrome(i)){
+        c++;
+        alert("The last Three pliandrome numbers are=>"+i);
+          if (c==3) {
+           break;
+          }
+        }
+       }
+}
+function nextplaindrome() {
+    
+    let ul=Number(prompt("Enter the Lucky Number=>"));
+        let c=0;
+    for(let i=ul; ;i++)
+{
+    if (plaindrome(i)) {
+            alert("The Next Plaindrome Number=>"+i);
+            break;
+        }
+       
+       
+    }
+}
+
+
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Plaindrome Number Programs</h1>
+       <a href="./lists.html"> <button>Go to Lists</button></a>
+    </header>
+    <div class="code">
+        <pre class="one">
+       <h1 onclick="printplaindrome();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Plaindrome 1</h1>     
+<code id="one">
+         function plaindrome(n) {
+               let temp=n;
+             let rev=0;
+             while (n>0) {
+            let d=n%10;
+            rev=rev*10+d;
+              n=Math.trunc(n/10);
+
+            } 
+              if (rev==temp) {
+               return true;
+              }
+              else{
+                return false;
+               }
+          }
+</code>
+
+<h1 onclick="rangeplaindrome();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Ranged Plaindrome </h1>     
+<code id="one">
+         function rangeplaindrome() {
+        
+            let ll=Number(prompt("Enter thr Lower Limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        for(let i=ll;i<=ul;i++)
+       {
+        if (plaindrome(i)) {
+            alert("The Plaindrome Numbers Are=>"+i);
+        }
+       }
+       }
+</code>
+
+
+
+<h1 onclick="alternateplaindrome();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Alternate Plaindrome </h1>     
+<code id="one">
+    function alternateplaindrome() {
+        let ll=Number(prompt("Enter thr Lower Limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        let c=0;
+        for(let i=ll;i<=ul;i++)
+       {
+          
+        if(plaindrome(i)){
+        c++;
+
+          if (c%2!=0) {
+     alert("The Alternate pliandrome numbers are=>"+i);
+          }
+        }
+       }
+       }
+</code>
+
+
+
+<h1 onclick="lastthreeplaindrome();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Last Three Plaindrome </h1>     
+<code id="one">
+    function lastthreeplaindrome() {
+        let ll=Number(prompt("Enter thr Lower Limit=>"));
+            let ul=Number(prompt("Enter the Upper Limit=>"));
+            let c=0;
+            for(let i=ul;i>=ll;i--)
+           {
+              
+            if(plaindrome(i)){
+            c++;
+        alert("The last Three pliandrome numbers are=>"+i);
+              if (c==3) {
+               break;
+              }
+            }
+           }
+    }
+</code>
+
+<h1 onclick="firstthreeplaindrome();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute First Three Plaindrome </h1>     
+<code id="one">
+    function firstthreeplaindrome() {
+        let ll=Number(prompt("Enter thr Lower Limit=>"));
+     let ul=Number(prompt("Enter the Upper Limit=>"));
+            let c=0;
+            for(let i=ll;i<=ul;i++)
+           {
+              
+            if(plaindrome(i)){
+            c++;
+         alert("The First Three pliandrome numbers are=>"+i);
+              if (c==3) {
+               break;
+              }
+            }
+           }
+    }
+</code>
+
+<h1 onclick="nextplaindrome();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Next Plaindrome</h1>     
+<code id="one">
+    function nextplaindrome() {
+    
+        let ul=Number(prompt("Enter the Lucky Number=>"));
+            let c=0;
+        for(let i=ul; ;i++)
+    {
+        if (plaindrome(i)) {
+                alert("The Next Plaindrome Number=>"+i);
+                break;
+            }
+           
+           
+        }
+    }
+</code>
+
+</pre>
+</div>
+</body>
+</html>

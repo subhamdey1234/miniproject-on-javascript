@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #one{
+           
+           color: aliceblue;
+           font-weight: 900;
+          font-size: 30px;
+       }
+       .one{
+           background-color: black;
+       margin-left: 400px;
+       margin-right: 300px;
+       border-radius: 18px;
+       }
+       h1{
+           text-align: center;
+       }
+       body{
+           background-image: linear-gradient(60deg,blue,green,yellow);
+           background-repeat: no-repeat;
+       }
+     header  h1{
+        color: rgb(255, 255, 255);
+        font-size: 35px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: 900;
+        text-decoration: underline solid rgb(31, 32, 29);
+        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+       }
+       header button{
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 16px;
+            background-image: linear-gradient(40deg,yellow,green);
+            font-weight: 900;
+            cursor: pointer;
+        }
+        header{
+            text-align: center;
+        }
+        header button:hover{
+            background-image: linear-gradient(40deg,rgb(15, 15, 12),rgb(0, 255, 0)); 
+            color: aliceblue;
+            transition: 0.5s;
+        }  
+    </style>
+
+<script>
+   function factorial(n) {
+            let f=1;
+            for(let i=1;i<=n;i++){
+            f=f*i;
+        }
+        return f;
+        }
+
+  function  printfact() {
+    let n=Number(prompt("Enter the Number=>"));
+    alert("The Factorial of "+n+" is=>"+factorial(n));
+  } 
+  
+  function recfactorial(n)
+{
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
+}
+
+// Driver Code
+function printrec() {
+    let num = Number(prompt("Enter the Number=>"));
+alert("Factorial of " + num + " is "
+            + recfactorial(num));
+}
+
+function rangedfactorial() {
+    let ll=Number(prompt("Enter the Lower Limit=>"));
+    let ul=Number(prompt("Enter the Upper Limit=>"));
+    let prod=1;
+    for(let i=ll;i<=ul;i++)
+{
+    prod=prod*i;
+}
+alert("ranged factorial=>"+prod);
+}
+</script>
+
+</head>
+<body>
+    <header>
+        <h1>Factorials Programs</h1>
+        <a href="./lists.html"> <button>Go to Lists</button></a>
+
+    </header>
+    <div class="code">
+        <pre class="one">
+       <h1 onclick="printfact();" style="text-align: center;color: rgb(127, 246, 0);text-decoration: underline;cursor:pointer;">Execute factorials of Number</h1>     
+<code id="one">
+    function factorial(n) {
+        let f=1;
+        for(let i=1;i<=n;i++){
+        f=f*i;
+    }
+    return f;
+    }
+
+  function  printfact() {
+  let n=Number(prompt("Enter the Number=>"));
+  alert("The Factorial of "+n+" is=>"+factorial(n));
+  }      
+     
+</code>
+
+<h1 onclick="printrec();" style="text-align: center;color: rgb(127, 246, 0);text-decoration: underline;cursor:pointer;">Execute Recursive Factorial</h1>     
+<code id="one">
+    function recfactorial(n)
+    {
+        if (n == 0)
+            return 1;
+        return n * factorial(n - 1);
+    }
+    
+    // Driver Code
+    function printrec() {
+        let num = Number("Enter the Number=>");
+    alert("Factorial of " + num + " is "
+                + factorial(num));
+    }
+     
+</code>
+
+
+<h1 onclick="rangedfactorial();" style="text-align: center;color: rgb(127, 246, 0);text-decoration: underline;cursor:pointer;">Execute Ranged Factorial</h1>     
+<code id="one">
+    function rangedfactorial() {
+        let ll=Number(prompt("Enter the Lower Limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        let prod=1;
+        for(let i=ll;i<=ul;i++)
+    {
+        prod=prod*i;
+    }
+    alert("ranged factorial=>"+prod);
+    }
+</code>
+
+
+
+
+</pre></div>
+
+</body>
+</html>

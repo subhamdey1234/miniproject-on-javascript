@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <style>
+        /* General Styling */
+        body {
+            background-image: url("./n.avif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 130vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        header button {
+            border: 1px solid rgb(255, 255, 255);
+            padding: 15px;
+            border-radius: 16px;
+            background-image: linear-gradient(40deg, yellow, green);
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background-image: linear-gradient(40deg, rgb(15, 15, 12), rgb(0, 255, 0));
+            color: aliceblue;
+            transition: 0.5s;
+        }
+
+        h1#Lists {
+            text-align: center;
+            margin-top: 10px;
+            color: aliceblue;
+            font-size: 50px;
+            text-shadow: 2px 1px rgb(61, 255, 12);
+            text-decoration: dashed;
+            font-style: oblique;
+            font-variant: small-caps;
+        }
+
+        .lists {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .link {
+            font-weight: 800;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .link a {
+            color: aliceblue;
+            font-size: 35px;
+            text-decoration: underline rgb(153, 255, 0);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .link a:hover {
+            color: greenyellow;
+            text-decoration: underline solid greenyellow;
+            transition: 0.4s;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
+            h1#Lists {
+                font-size: 40px;
+            }
+
+            .link a {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1#Lists {
+                font-size: 30px;
+            }
+
+            header button {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .link a {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1#Lists {
+                font-size: 24px;
+            }
+
+            header button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .link a {
+                font-size: 18px;
+            }
+
+            .link {
+                margin-left: 0;
+            }
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="./index.html"><button>Go to Home</button></a>
+        <h1 id="Lists">---------Program Lists---------</h1>
+    </header>
+
+    <div class="lists">
+        <p class="link" id="one"><a href="prime.html">1. Prime Numbers</a></p>
+        <p class="link" id="two"><a href="Armstrongnumbers.html">2. Armstrong Numbers</a></p>
+        <p class="link" id="three"><a href="reverse.html">3. Reverse Numbers</a></p>
+        <p class="link" id="four"><a href="fibonacci.html">4. Fibonacci Series</a></p>
+        <p class="link" id="five"><a href="plaindrome.html">5. Palindrome Numbers</a></p>
+        <p class="link" id="six"><a href="factorial.html">6. Factorials of Numbers</a></p>
+        <p class="link" id="seven"><a href="perfect.html">7. Perfect Numbers</a></p>
+        <p class="link" id="eight"><a href="strong.html">8. Strong Numbers</a></p>
+        <p class="link" id="nine"><a href="studentmarks.html">9. Student Result Portal</a></p>
+        <p class="link" id="ten"><a href="electricitybill.html">10. Electric Bill Calculator</a></p>
+        <p class="link" id="eleven"><a href="starpattern1.html">11. Pattern Star 1</a></p>
+        <p class="link" id="twelve"><a href="prime.html">12. Pattern Star 2</a></p>
+        <p class="link" id="thirteen"><a href="prime.html">13. Pattern Star 3</a></p>
+        <p class="link" id="fourteen"><a href="prime.html">14. Number Pattern</a></p>
+        <p class="link" id="fifteen"><a href="prime.html">15. Number Pattern</a></p>
+    </div>
+</body>
+</html>

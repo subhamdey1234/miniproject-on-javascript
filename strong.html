@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function factorial(n) {
+        let p=1;
+        for(let i=1;i<=n;i++)
+        {
+            p=p*i;
+        }
+        return p;
+        }
+function strongnumber(n) {
+    let sum=0;
+    let temp=n;
+    while(n>0)
+{
+    let d=n%10;
+    sum+=factorial(d);
+    n=Math.trunc(n/10);
+
+}
+if (sum==temp) {
+    return true;
+}
+else{
+    return false;
+}
+}
+
+function printstrong() {
+    let n=Number(prompt("Enter the Number=>"));
+    if (strongnumber(n)) {
+        alert("The Number "+n+" is a Strong Number");
+    }
+    else{
+        alert("Sorry!! the Number "+n+" is not a Strong Number");
+    }
+}
+function rangedstrong() {
+    let ll=Number(prompt("Enter the lower limit=>"));
+    let ul=Number(prompt("Enter the Upper Limit=>"));
+   for(let i=ll;i<=ul;i++)
+   {
+    if (strongnumber(i)) {
+ alert("The Strong Numbers in between "+ll+" and "+ul+" is=> "+i);        
+    }
+}
+}
+function alternatestrong() {
+    let ll=Number(prompt("Enter the lower limit=>"));
+    let ul=Number(prompt("Enter the Upper Limit=>"));
+    let c=0;
+    for(let i=ll;i<=ul;i++)
+   {  
+
+if (strongnumber(i)) {
+    c++;
+       if(c%2!=0)
+{
+    alert("the Alternate strong numbers=>"+i);
+} 
+    }
+
+}
+}
+function firstthreestrong() {
+    let ll=Number(prompt("Enter the lower limit=>"));
+    let ul=Number(prompt("Enter the Upper Limit=>"));
+    let c=0;
+    for(let i=ll;i<=ul;i++)
+    {
+        if (strongnumber(i)) {
+            c++;
+            alert("the first three strong numbers are=>"+i);
+            if (c==3) 
+            {
+                break;
+            }
+        }
+    }    
+
+}
+function lastthreestrong() {
+    let ll=Number(prompt("Enter the lower limit=>"));
+    let ul=Number(prompt("Enter the Upper Limit=>"));
+    let c=0;
+    for(let i=ul;i>=ll;i--)
+    {
+if (strongnumber(i)) {
+    c++;
+            alert("the Last three strong numbers are=>"+i);
+            if (c==3) 
+            {
+                break;
+            }
+}
+    }
+}
+
+
+    </script>
+    <style>
+        header h1{
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+        #one{
+            
+            color: aliceblue;
+            font-weight: 900;
+           font-size: 30px;
+           text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+        .one{
+            background-color: black;
+        margin-left: 400px;
+        margin-right: 300px;
+        border-radius: 18px;
+        }
+        h1{
+            text-align: center;
+        }
+        body{
+            background-image: linear-gradient(60deg,blue,green,yellow);
+        }
+      header  h1{
+         color: rgb(255, 255, 255);
+         font-size: 35px;
+         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+         font-weight: 900;
+         text-decoration: underline solid rgb(31, 32, 29);
+        }
+        header button{
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 16px;
+            background-image: linear-gradient(40deg,yellow,green);
+            font-weight: 900;
+            cursor: pointer;
+        }
+        header{
+            text-align: center;
+        }
+        header button:hover{
+            background-image: linear-gradient(40deg,rgb(15, 15, 12),rgb(0, 255, 0)); 
+            color: aliceblue;
+            transition: 0.5s;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Strong Number Programs</h1>
+       <a href="./lists.html"> <button>Go to Lists</button></a>
+    </header>
+    <div class="code">
+        <pre class="one">
+       <h1 onclick="printstrong();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Strong number</h1>     
+<code id="one">
+    function factorial(n) {
+        let p=1;
+        for(let i=1;i<=n;i++)
+        {
+            p=p*i;
+        }
+        return p;
+        }
+    function strongnumber(n) {
+    let sum=0;
+    let temp=n;
+    while(n>0)
+    {
+    let d=n%10;
+    sum+=factorial(d);
+    n=Math.trunc(n/10);
+
+   }
+      if (sum==temp) {
+    return true;
+     }
+    else{
+    return false;
+     }
+  }
+
+</code>
+
+<h1 onclick="rangedstrong();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Ranged Strong Number</h1>     
+<code id="one">
+    function rangedstrong() {
+        let ll=Number(prompt("Enter the lower limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+       for(let i=ll;i<=ul;i++)
+       {
+        if (strongnumber(i)) {
+     alert("The Strong Numbers in between "+ll+" and "+ul+
+     " is=> "+i);        
+        }
+    }
+    }
+    function strongnumber(n) {
+        let sum=0;
+        let temp=n;
+        while(n>0)
+        {
+        let d=n%10;
+        sum+=factorial(d);
+        n=Math.trunc(n/10);
+    
+       }
+          if (sum==temp) {
+        return true;
+         }
+        else{
+        return false;
+         }
+      }
+</code>
+
+<h1 onclick="alternatestrong();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Alternate Strong Number</h1>     
+<code id="one">
+    function alternatestrong() {
+        let ll=Number(prompt("Enter the lower limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        let c=0;
+        for(let i=ll;i<=ul;i++)
+       {  
+    
+    if (strongnumber(i)) {
+        c++;
+           if(c%2!=0)
+    {
+        alert("the Alternate strong numbers=>"+i);
+    } 
+        }
+    
+    }
+</code>
+
+<h1 onclick="firstthreestrong();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute First Three Strong Number</h1>     
+<code id="one">
+    function firstthreestrong() {
+        let ll=Number(prompt("Enter the lower limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        let c=0;
+        for(let i=ll;i<=ul;i++)
+        {
+            if (strongnumber(i)) {
+                c++;
+         alert("the first three strong numbers are=>"+i);
+                if (c==3) 
+                {
+                    break;
+                }
+            }
+        }    
+    
+    }
+</code>
+
+
+<h1 onclick="lastthreestrong();" style="cursor: pointer;text-align: center;color: rgb(127, 246, 0);text-decoration: underline;">Execute Last Three Strong Number</h1>     
+<code id="one">
+    function lastthreestrong() {
+        let ll=Number(prompt("Enter the lower limit=>"));
+        let ul=Number(prompt("Enter the Upper Limit=>"));
+        let c=0;
+        for(let i=ul;i>=ll;i--)
+        {
+    if (strongnumber(i)) {
+        c++;
+         alert("the Last three strong numbers are=>"+i);
+                if (c==3) 
+                {
+                    break;
+                }
+    }
+        }
+    }
+</code>
+
+
+</pre>
+</div>
+
+</body>
+</html>

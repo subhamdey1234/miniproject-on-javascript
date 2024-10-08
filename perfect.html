@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+ #one{
+            color: aliceblue;
+            font-weight: 900;
+            font-size: 30px;
+        }
+        .one{
+            background-color: black;
+            margin-left: 400px;
+            margin-right: 300px;
+            border-radius: 18px;
+        }
+        h1{
+            text-align: center;
+        }
+        body{
+            background-image: linear-gradient(60deg, blue, green, yellow);
+        }
+        header h1{
+            color: rgb(255, 251, 251);
+            font-size: 35px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 900;
+            text-decoration: underline solid rgb(31, 32, 29);
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+        header button{
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 16px;
+            background-image: linear-gradient(40deg, yellow, green);
+            font-weight: 900;
+            cursor: pointer;
+        }
+        header{
+            text-align: center;
+        }
+        header button:hover{
+            background-image: linear-gradient(40deg, rgb(15, 15, 12), rgb(0, 255, 0)); 
+            color: aliceblue;
+            transition: 0.5s;
+        }
+</style>
+<script>
+function perfect(n) {
+    let sum=0;
+    for(let i=1;i<=n/2;i++)
+{
+if (n%i===0) {
+    sum+=i;
+}
+
+}
+if (sum==n && sum!=0) {
+    console.log("The Number is a Perfect Number");
+    return true;
+    
+}
+else{
+    console.log("The number is not a Perfect Number");
+    return false;
+}
+}
+function printperfect() {
+    let n=Number(prompt("Enter the Number=>"));
+    if (perfect(n)) {
+        alert("The Number is a Perfect Number");
+    }
+    else{
+      alert("The number is not a Perfect Number");  
+    }
+}
+
+function alternateperfect() {
+    let n=Number(prompt("Enter The Ending Number=>"));
+    let s=Number(prompt("Enter The  Starting Number=>"));
+    let c=0;
+    for(let i=s;i<=n;i++)
+{
+if (perfect(i)) {
+    c++;
+    if (c%2!=0) {
+        alert("The Alternate Perfect Numbers=>"+i);
+    }
+}
+}
+}
+function firstthreeperfect() {
+    let n=Number(prompt("Enter The Ending Number=>"));
+    let s=Number(prompt("Enter The  Starting Number=>"));
+    let c=0;
+    for(let i=s;i<=n;i++)
+{
+if (perfect(i)) {
+    c++;
+    alert("The Alternate Perfect Numbers=>"+i);
+    if (c==3) {
+        break;
+    }
+}
+}
+}
+function lastthreeperfect() {
+    let n=Number(prompt("Enter The Ending Number=>"));
+    let s=Number(prompt("Enter The  Starting Number=>"));
+    let c=0;
+    for(let i=n;i>=s;i--)
+{
+if (perfect(i)) {
+    c++;
+    alert("The Last Three Perfect Numbers=>"+i);
+    if (c==3) {
+        break;
+    }
+}
+}
+
+}
+
+</script>
+</head>
+<body>
+     <header>
+        <h1>Perfect Numbers Programs</h1>
+        <a href="./lists.html"> <button>Go to Lists</button></a>
+
+    </header>
+    <div class="code">
+        <pre class="one">
+       <h1 onclick="printperfect();" style="text-align: center;color: rgb(127, 246, 0);text-decoration: underline;cursor:pointer;">Execute Perfect Number 1</h1>     
+<code id="one">
+    function perfect(n) {
+        let sum=0;
+        for(let i=1;i<=n/2;i++)
+    {
+    if (n%i===0) {
+        sum+=i;
+    }
+    
+    }
+    if (sum==n && sum!=0) {
+        console.log("The Number is a Perfect Number");
+        return true;
+        
+    }
+    else{
+        console.log("The number is not a Perfect Number");
+        return false;
+    }
+    }   
+     
+</code>
+
+<h1 onclick="alternateperfect();" style="text-align: center;color: rgb(127, 246, 0);text-decoration: underline;cursor:pointer;">Execute alternate Perfect Number</h1>     
+<code id="one">
+    function alternateperfect() {
+        let n=Number(prompt("Enter The Ending Number=>"));
+        let s=Number(prompt("Enter The  Starting Number=>"));
+        let c=0;
+        for(let i=s;i<=n;i++)
+    {
+    if (perfect(i)) {
+        c++;
+        if (c%2!=0) {
+            alert("The Alternate Perfect Numbers=>"+i);
+        }
+    }
+    }
+    }
+     
+</code>
+
+
+<h1 onclick="firstthreeperfect();" style="text-align: center;color: rgb(127, 246, 0);text-decoration: underline;cursor:pointer;">Execute First Three Perfect Number</h1>     
+<code id="one">
+    function firstthreeperfect() {
+        let n=Number(prompt("Enter The Ending Number=>"));
+        let s=Number(prompt("Enter The  Starting Number=>"));
+        let c=0;
+        for(let i=s;i<=n;i++)
+    {
+    if (perfect(i)) {
+        c++;
+        alert("The Alternate Perfect Numbers=>"+i);
+        if (c==3) {
+            break;
+        }
+    }
+    }
+    }
+</code>
+
+
+
+<h1 onclick="lastthreeperfect();" style="text-align: center;color: rgb(127, 246, 0);text-decoration: underline;cursor:pointer;">Execute Last Three Perfect Number</h1>     
+<code id="one">
+    function lastthreeperfect() {
+        let n=Number(prompt("Enter The Ending Number=>"));
+        let s=Number(prompt("Enter The  Starting Number=>"));
+        let c=0;
+        for(let i=n;i>=s;i--)
+    {
+    if (perfect(i)) {
+        c++;
+        alert("The Last Three Perfect Numbers=>"+i);
+        if (c==3) {
+            break;
+        }
+    }
+    }
+    
+    }
+</code>
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            color: aliceblue;
+            font-weight: 900;
+            font-size: 30px;
+        }
+        .one{
+            background-color: black;
+            margin-left: 400px;
+            margin-right: 300px;
+            border-radius: 18px;
+        }
+        h1{
+            text-align: center;
+        }
+        body{
+            background-image: linear-gradient(60deg, blue, green, yellow);
+        }
+        header h1{
+            color: rgb(255, 251, 251);
+            font-size: 35px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 900;
+            text-decoration: underline solid rgb(31, 32, 29);
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+        }
+        header button{
+            border: 1px solid black;
+            padding: 15px;
+            border-radius: 16px;
+            background-image: linear-gradient(40deg, yellow, green);
+            font-weight: 900;
+            cursor: pointer;
+        }
+        header{
+            text-align: center;
+        }
+        header button:hover{
+            background-image: linear-gradient(40deg, rgb(15, 15, 12), rgb(0, 255, 0)); 
+            color: aliceblue;
+            transition: 0.5s;
+        }
+    </style>
+
+<script>
+    function fibonacci(n) {
+        let num1 = 0;
+        let num2 = 1;
+        let sum = 0;
+        if (n == 1) {
+            return num1;
+        } else if (n == 2) {
+            return num2;
+        } else {
+            for (let i = 3; i <= n; i++) {
+                sum = num1 + num2;
+                num1 = num2;
+                num2 = sum;
+                alert("Series for " + i + "th iteration => " + num2);
+            }
+            return num2;
+        }
+    }
+
+    function printfibonacci() {
+        let n = Number(prompt("Enter N value for fibonacci series =>"));
+        alert("The fibonacci series last number => " + fibonacci(n));
+    }
+
+    function fibo() {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        let ul = Number(prompt("Enter the upper limit"));
+        let ll = Number(prompt("Enter the lower limit"));
+        if (ll == 0) {
+            alert("Number => " + a);
+            console.log(a);
+        }
+
+        for (;;) {
+            c = a + b;
+            if (c > ul) {
+                break;
+            }
+            if (c >= ll) {
+                alert("Number => " + c);
+                console.log(c);
+            }
+            a = b;
+            b = c;
+        }
+    }
+
+    function alternatefibo() {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        let ul = Number(prompt("Enter the upper limit"));
+        let ll = Number(prompt("Enter the lower limit"));
+        if (ll == 0) {
+            alert("Number => " + a);
+            console.log(a);
+        }
+
+        let i = 0;
+        for (;;) {
+            i++;
+            c = a + b;
+            if (c > ul) {
+                break;
+            }
+            if (c >= ll) {
+                if (i % 2 != 0) {
+                    alert("Number => " + c);
+                    console.log(c);
+                }
+            }
+            a = b;
+            b = c;
+        }
+    }
+
+    function lastthreefibo() {
+        let a = 0, b = 1, c = 0;
+        let fibSeries = [];
+
+        let ul = Number(prompt("Enter the upper limit"));
+        let ll = Number(prompt("Enter the lower limit"));
+
+        if (ll == 0) {
+            fibSeries.push(a);
+        }
+
+        while (c <= ul) {
+            c = a + b;
+            if (c >= ll && c <= ul) {
+                fibSeries.push(c);
+            }
+            a = b;
+            b = c;
+        }
+
+        let result = fibSeries.slice(-3);
+        if (result.length > 0) {
+            alert("Last three Fibonacci numbers in range: " + result.join(", "));
+            console.log("Last three Fibonacci numbers in range:", result);
+        } else {
+            alert("No Fibonacci numbers found in the given range.");
+            console.log("No Fibonacci numbers found in the given range.");
+        }
+    }
+
+    function firstthreefibo() {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        let ul = Number(prompt("Enter the upper limit"));
+        let ll = Number(prompt("Enter the lower limit"));
+        if (ll == 0) {
+            alert("Number => " + a);
+            console.log(a);
+        }
+
+        let i = 0;
+        for (;;) {
+            i++;
+            c = a + b;
+            if (c > ul) {
+                break;
+            }
+            if (c >= ll) {
+                alert("Number => " + c);
+                console.log(c);
+                if (i == 3) {
+                    break;
+                }
+            }
+            a = b;
+            b = c;
+        }
+    }
+
+    function nextfibo() {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        let ul = Number(prompt("Enter the Lucky Number"));
+
+        if (ul === 0) {
+            alert("Next Fibonacci number => " + a);
+            console.log(a);
+            return;
+        }
+
+        while (c < ul) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+
+        alert("Next Fibonacci number => " + c);
+        console.log("Next Fibonacci number =>", c);
+    }
+</script>
+
+</head>
+<body>
+    <header>
+        <h1>Fibonacci Series Programs</h1>
+        <a href="./lists.html"><button>Go to Lists</button></a>
+    </header>
+    <div class="code">
+        <pre class="one">
+
+<h1 onclick="printfibonacci();" style="cursor: pointer; text-align: center; color: rgb(127, 246, 0); text-decoration: underline;">Execute Fibonacci Series 1
+</h1>
+<code id="one">
+    function fibonacci(n) {
+        let num1 = 0;
+        let num2 = 1;
+        let sum = 0;
+        if (n == 1) {
+            return num1;
+        } else if (n == 2) {
+            return num2;
+        } else {
+            for (let i = 3; i <= n; i++) {
+                sum = num1 + num2;
+                num1 = num2;
+                num2 = sum;
+     alert("Series for " + i + "th iteration => " + num2);
+            }
+            return num2;
+        }
+    }
+
+    function printfibonacci() {
+let n = Number(prompt("Enter N value fibonacci series =>"));
+alert("The fibonacci series last number => " + fibonacci(n));
+    }
+</code>
+
+<h1 onclick="fibo();" style="cursor: pointer; text-align: center; color: rgb(116, 248, 0); text-decoration: underline;">Execute Range Of Fibonacci Series
+</h1>
+<code id="one">
+    function fibo() {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        let ul = Number(prompt("Enter the upper limit"));
+        let ll = Number(prompt("Enter the lower limit"));
+        if (ll == 0) {
+            alert("Number => " + a);
+            console.log(a);
+        }
+
+        for (;;) {
+            c = a + b;
+            if (c > ul) {
+                break;
+            }
+            if (c >= ll) {
+                alert("Number => " + c);
+                console.log(c);
+            }
+            a = b;
+            b = c;
+        }
+    }
+</code>
+
+<h1 onclick="alternatefibo();" style="cursor: pointer; text-align: center; color: rgb(116, 248, 0); text-decoration: underline;">Execute Alternate Fibonacci Numbers
+</h1>
+<code id="one">
+    function alternatefibo() {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        let ul = Number(prompt("Enter the upper limit"));
+        let ll = Number(prompt("Enter the lower limit"));
+        if (ll == 0) {
+            alert("Number => " + a);
+            console.log(a);
+        }
+
+        let i = 0;
+        for (;;) {
+            i++;
+            c = a + b;
+            if (c > ul) {
+                break;
+            }
+            if (c >= ll) {
+                if (i % 2 != 0) {
+                    alert("Number => " + c);
+                    console.log(c);
+                }
+            }
+            a = b;
+            b = c;
+        }
+    }
+</code>
+
+<h1 onclick="firstthreefibo();" style="cursor: pointer; text-align: center; color: rgb(116, 248, 0); text-decoration: underline;">Execute First Three Fibonacci Numbers
+</h1>
+<code id="one">
+    function firstthreefibo() {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        let ul = Number(prompt("Enter the upper limit"));
+        let ll = Number(prompt("Enter the lower limit"));
+        if (ll == 0) {
+            alert("Number => " + a);
+            console.log(a);
+        }
+
+        let i = 0;
+        for (;;) {
+            i++;
+            c = a + b;
+            if (c > ul) {
+                break;
+            }
+            if (c >= ll) {
+                alert("Number => " + c);
+                console.log(c);
+                if (i == 3) {
+                    break;
+                }
+            }
+            a = b;
+            b = c;
+        }
+    }
+</code>
+
+<h1 onclick="lastthreefibo();" style="cursor: pointer; text-align: center; color: rgb(116, 248, 0); text-decoration: underline;">Execute Last Three Fibonacci Series
+</h1>
+<code id="one">
+    function lastthreefibo() {
+        let a = 0, b = 1, c = 0;
+        let fibSeries = [];
+
+        let ul = Number(prompt("Enter the upper limit"));
+        let ll = Number(prompt("Enter the lower limit"));
+
+        if (ll == 0) {
+            fibSeries.push(a);
+        }
+
+        while (c <= ul) {
+            c = a + b;
+            if (c >= ll && c <= ul) {
+                fibSeries.push(c);
+            }
+            a = b;
+            b = c;
+        }
+
+        let result = fibSeries.slice(-3);
+        if (result.length > 0) {
+  alert("Last three Fibonacci numbers in range: " +
+   result.join(", "));
+  console.log("Last three Fibonacci numbers in range:",
+   result);
+        } 
+    else {
+alert("No Fibonacci numbers found in the given range.");
+console.log("No Fibonacci numbers found in the given range.");
+        }
+    }
+</code>
+
+<h1 onclick="nextfibo();" style="cursor: pointer; text-align: center; color: rgb(116, 248, 0); text-decoration: underline;">Execute Next Fibonacci Series
+</h1>
+<code id="one">
+    function nextfibo() {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        let ul = Number(prompt("Enter the Lucky Number"));
+
+        if (ul === 0) {
+            alert("Next Fibonacci number => " + a);
+            console.log(a);
+            return;
+        }
+
+        while (c < ul) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+
+        alert("Next Fibonacci number => " + c);
+        console.log("Next Fibonacci number =>", c);
+    }
+</code>
+        </pre>
+    </div>
+</body>
+</html>
